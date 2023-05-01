@@ -11,21 +11,29 @@ isAvailable: false },
 ];
 
 // Create a function called getAvailableBooks that returns an array of all available books
-function getAvailableBooks(){
+function getAvailableBooks(books){
+    return books.filter(book => book.isAvailable);
 
 }
 
 // Create a function getBooksByAuthor that takes an author's name as an argument and
 //returns an array of all books by that author.
-function getBooksByAuthor(){
+function getBooksByAuthor(authorName, books){
+    return books(book.author == authorName)
 
 }
 // Create a function addNewBook that takes a book object as an argument and adds it
 //to the library, ensuring that the new book has all required properties (title, author,
 //publicationYear, and isAvailable).
-function addNewBook(){
-
-}
+function addNewBook(books, newBook) {
+    const newBook = ['title', 'author', 'publicationYear', 'isAvailable'];
+    if (newBook) {
+      console.log('add"${newBook.title}" to the library.`);
+    } else {
+      console.error('No all properties');
+    }
+  }
+  
 //Create a function checkoutBook that takes a book title as an argument and changes
 //the book's isAvailable property to false. If the book is not found in the library, the
 //function should return a message indicating that the book is not available.
